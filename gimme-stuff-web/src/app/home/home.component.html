@@ -1,0 +1,39 @@
+<form class="form-signin">
+	<button class="w-100 btn btn-lg btn-primary" routerLink="mission">New Mission</button>
+</form>
+
+<div ng-controller="missionsController">
+
+	<table id="missions">
+		<th *ngFor = "let column of headers">
+			{{column}}
+		</th>
+		<tr *ngFor = "let m of missions">
+			<td>
+				{{m.title}}
+			</td>
+			<td>
+				{{m.description}}
+			</td>
+			<td>
+				{{m.typeString}}
+			</td>
+			<td>
+				{{m.stateString}}
+			</td>
+			<td>
+				{{m.userAssignee}}
+			</td>
+			<td>
+				{{m.userAuthor}}
+			</td>
+			<td>
+				<button class="w-100 btn btn-lg btn-primary" routerLink="mission">Edit</button>
+			</td>
+		  </tr>
+	</table>
+
+	<br />
+	{{messageMissionsCount}}
+	
+</div>
