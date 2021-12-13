@@ -1,0 +1,29 @@
+
+<form [formGroup]="form" (submit)="submit()" class="form-signin">
+	<h1>{{message}}</h1>
+	<input formControlName="title" type="text" class="form-control" placeholder="title" required>
+
+	<input formControlName="description" type="text" class="form-control" placeholder="description" required>
+
+	<div style="padding: 20px;">
+	<select formControlName="type" style="width: 50%;">
+		<option value="0" selected>Feature</option>
+		<option value="1">Bug</option>
+	  </select>
+
+	  <select formControlName="state" style="width: 50%;">
+		<option value="0" selected>New</option>
+		<option value="1">In progress</option>
+		<option value="2">Done</option>
+	  </select>
+
+	  <select formControlName="userAssignee" style="display: none;">
+		<option value="0" selected>Admin</option>
+		<option value="1">Dev</option>
+		<option value="2">Dev1</option>
+	  </select>
+	  
+	<input formControlName="userAuthor" value="1" type="text" class="form-control" placeholder="description" style="display: none;" required>
+	</div>
+	<button class="w-100 btn btn-lg btn-primary" type="submit">Add new Mission</button>
+</form>
