@@ -2,6 +2,7 @@ import { MissionState } from "./missionState";
 import { MissionType } from "./missionType";
 
 export interface Mission {
+	missionId: number;
 	title: string;
 	description: string;
 	type: MissionType;

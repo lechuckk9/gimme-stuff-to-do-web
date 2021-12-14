@@ -28,7 +28,16 @@
 				{{m.userAuthor}}
 			</td>
 			<td>
-				<button class="w-100 btn btn-lg btn-primary" routerLink="mission">Edit</button>
+				<div class="btn-group" role="group" aria-label="State actions" style="width: 100% !important;">
+					<button class="btn btn-outline-secondary" (click)="setPreviousState(m.missionId)">Previous state</button>
+					<button class="btn btn-outline-success" (click)="setNextState(m.missionId)">Next state</button>
+				</div>
+			</td>
+			<td>
+				<div class="btn-group" role="group" aria-label="State actions" style="width: 100% !important;">
+					<button class="btn btn-outline-secondary" (click)="resetState(m.missionId)">Reset</button>
+					<button class="btn btn-outline-success" (click)="finishState(m.missionId)">Finish</button>
+				</div>
 			</td>
 		  </tr>
 	</table>

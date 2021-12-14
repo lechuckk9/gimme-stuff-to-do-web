@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Globals } from '../globals/globals';
 
 @Component({
   selector: 'app-mission',
@@ -50,7 +51,7 @@ export class MissionComponent implements OnInit {
 
     this.httpClient.post
     (
-      'https://localhost:5001/api/missions',
+      Globals.host + '/api/missions',
       request,
       { withCredentials : true, headers: headers }
     ).subscribe(res => this.handleResponse(res));
@@ -58,7 +59,7 @@ export class MissionComponent implements OnInit {
 
   handleResponse(res: any): void {
     if (res.resultCode == 0) {
-      this.router.navigate(["/"]);      
+      this.router.navigate(["/"]);
     }
     else {
       localStorage.removeItem("jwt");
